@@ -385,6 +385,7 @@
   &:hover {
     .product-item__link-box {
       transform: translateY(0);
+      transition: all .3s;
     }
   }
   &__title {
