@@ -37,6 +37,15 @@ $bg: #f6f6f6;
   @extend %roboto-400;
 }
 
+%btn2 {
+  text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+    margin-top: 55px;
+}
+
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});
 }
