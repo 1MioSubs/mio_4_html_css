@@ -110,8 +110,6 @@
 
 @media (max-width: 860px) {
   .footer-top {
-    &__item-form {
-    }
     &__contact {
       width: 100%;
       margin-right: 0;
@@ -914,9 +912,6 @@
       padding-left: 5px;
       margin-left: 0;
     }
-    &__item-btn{
-
-    }
   }
   .product-filter__size label{
     margin-right: -1px;
@@ -924,6 +919,7 @@
   .comments{
     &__content-date{
       display: none;
+      
     }
   }
   .related{
