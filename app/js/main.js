@@ -1,17 +1,21 @@
 
 $(function(){
-  // let map;
 
-  // async function initMap() {
-  //   const { Map } = await google.maps.importLibrary("maps");
+  $(".menu__btn").on("click", function () {
+    $(".menu__list").toggleClass("menu__list--active");
+  })
+  let map;
 
-  //   map = new Map(document.getElementById("map"), {
-  //     center: { lat: 40.711, lng: -74.005 },
-  //     zoom: 8,
-  //   });
-  // }
-  // // 40.711945865544415, -74.00509519304302
-  // initMap();
+  async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+
+    map = new Map(document.getElementById("map"), {
+      center: { lat: 40.711, lng: -74.005 },
+      zoom: 8,
+    });
+  }
+  // 40.711945865544415, -74.00509519304302
+  initMap();
 
   $(".product-tabs__top-item").on("click", function (e) {
     e.preventDefault();
@@ -31,12 +35,18 @@ $(function(){
     $(this).addClass("shop-content__filter-btn--active");
   });
 
+  $(".shop__filter-btn").on("click", function () {
+    $(".shop__filters").slideToggle();
+  });
+
   $(".button-list").on("click", function () {
     $(".product-item").addClass("product-item--list");
+    $(".shop-content__inner").addClass("shop-content__nogrid");
   });
 
   $(".button-grid").on("click", function () {
     $(".product-item").removeClass("product-item--list");
+    $(".shop-content__inner").removeClass("shop-content__nogrid");
   });
 
   $(".select-style, .product-one__item-num").styler();
@@ -76,6 +86,14 @@ $(function(){
     draggable: false,
     arrows: false,
     fade: true,
+    responsive: [
+      {
+        breakpoint: 1050,
+        settings: {
+          draggable: true,
+        },
+      },
+    ],
   });
 
   $(".blog-page__slider").slick({
